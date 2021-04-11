@@ -9,8 +9,9 @@ export default function AddMovies() {
         setNewMovie({...newMovie, [e.target.name]:e.target.value})
     }
     const movieSubmit=()=>{
-        console.log(newMovie);
-        setMovies({type:"ADD_MOVIE", payload:newMovie})
+        //console.log(newMovie);
+        const movie={id:movies.length+1, ...newMovie};
+        setMovies({type:"ADD_MOVIE", payload:movie})
     }
     return (
         <div className="container">
